@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IdbrAdmin</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+		<style>
+			::placeholder {
+			  color: hsl(0, 0%, 75%) !important;
+			}
+			thead {
+				position: sticky;
+				top: 0;
+			}
+		</style>
+  </head>
+  <body class="h-100">
+		<div class="d-flex flex-column h-100">
+			<div class="p-1">IdbrAdmin</div>
+			<div class="p-1" id="alerts"></div>
+			<div id="selectResult" class="overflow-scroll">
+			<table class="table table-sm table-hover">
+				<thead class="table-secondary"><tr></tr></thead>
+				<tbody></tbody>
+			</table>
+			</div>
+			<div class="flex-grow-1"></div>
+			<div class="p-1 d-flex justify-content-end flex-wrap gap-1">
+				<div class="text-nowrap">
+					<button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#deleteDatabaseModal">deleteDatabase</button>
+					<button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#openDatabaseModal">openDatabase</button>
+				</div>
+				<div class="text-nowrap">
+					<button class="dml btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#dropColumnsModal">dropColumns</button>
+				</div>
+				<div class="text-nowrap">
+					<button class="dml btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#importModal">import</button>
+					<button class="dml btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exportModal">export</button>
+				</div>
+				<div class="text-nowrap">
+					<button class="dml btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#insertModal">insert</button>
+					<button class="dml btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#selectModal">select</button>
+					<button class="dml btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#updateModal">update</button>
+					<button class="dml btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#deleteModal">delete</button>
+				</div>
+			</div>
+		</div>
+    <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+		<script type="module">
+			(await import('./IdbrAdmin.js')).IdbrAdmin.start();
+		</script>
+  </body>
+</html>
